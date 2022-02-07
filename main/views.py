@@ -1,4 +1,5 @@
 from doctest import master
+from django.contrib import messages
 from email import message
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -30,8 +31,8 @@ def service(request,pk):
         if(request.POST.get('password')==decrypt_password(cur_user.key,cur_user.master_password)):
             query.delete()
             return redirect('login')
-        # else:
-        #     message("wrong password")
+        else:
+            messages.success(request, 'Wrong password')
     return render(request, 'main/service.html', context)
 
 def login(request):
