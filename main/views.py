@@ -28,7 +28,7 @@ def service(request,pk):
         query = User.objects.get(id=cur_user.id)
         if(request.POST.get('password')==decrypt_password(cur_user.key,cur_user.master_password)):
             query.delete()
-            return redirect('home')
+            return redirect('login')
     return render(request, 'main/service.html', context)
 
 def login(request):

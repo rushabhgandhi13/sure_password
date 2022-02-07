@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Services</title>
     <script>
       function toggleText() {
@@ -20,12 +20,39 @@
         }
       }
       </script>
+      
+      <style>
+        td {
+          text-align: center;
+        }
+        tr {
+          text-align: center;
+        }
+        th {
+          text-align: center;
+        }
+      </style>
   </head>
   <body>
-    <h1>Services</h1>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteaccount">
-      Delete Account
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <h1 class="navbar-brand" href="#" style="font-size: 30px">Sure Password</h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        <i class="fa fa-plus"></i> Add services
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a style="margin-right: 15px" href="{% url 'login' %}" class="btn btn-outline-danger my-2 my-sm-0"> <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+          <button class="btn btn-outline-danger my-2 my-sm-0" data-toggle="modal" data-target="#deleteaccount" type="button">Delete Account</button>
+        </form>
+      </div>
+    </nav>
     
     <!-- Modal -->
     <div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -56,40 +83,27 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <table>
+    
+    <div class="container-fluid">
+      <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Delete</th>
+          <th>Service Info</th>
+          <th>Update Info</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in service %}  
       <tr>
-        
-        <th>Name</th>
-        <th>Delete</th>
-        
-      </tr>
-      {% for s in service %}
-      <tr>
+        <td>{{ forloop.counter }}</td>
         <td>{{ s.service_name }}</td>
-        <td><a href="/delete/{{ s.id }}">delete</a></td>
-        {% comment %} <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal{{s.id}}">
-          view service
-        </button>
-        <div class="modal fade" id="modal{{s.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>{{ s.service_name }}</p>
-                <p>{{ s.password }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </td> {% endcomment %}
-        <td><a class="btn btn-primary" href="/view_password/{{ s.id }}" target="_blank">View Password</a></td>
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update{{s.id}}">
+        <td><a href="/delete/{{ s.id }}" class="btn btn-outline-danger">Delete</a></td>
+        <td><a class="btn btn-outline-primary" href="/view_password/{{ s.id }}" target="_blank">View Info</a></td>
+        <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#update{{s.id}}">
           Update password
         </button>
         <div class="modal fade" id="update{{s.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -128,16 +142,10 @@
         </td>
       </tr>
       {% endfor %}
+      </tbody>
     </table>
     </div>
-    <div class="container">
-        {% comment %} <a class="nav-link btn btn-primary" href="#">add services</a>
-        <br> {% endcomment %}
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-          add services
-        </button>
-        
+    <div class="container">       
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -175,12 +183,16 @@
         <br>
         <br>
         
-        <a href="{% url 'home' %}" class="btn btn-primary">Logout</a>
+      </div>
+      <div class="container fixed">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2021-2022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
   </body>
 </html>
