@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Services</title>
+    <script>
+      function toggleText() {
+        var text = document.getElementById("passshower");
+        console.log(text.style.display);
+        if (text.style.display === "none") {
+          text.style.display = "block";
+        } else {
+          text.style.display = "none";
+        }
+      }
+      </script>
   </head>
   <body>
     <h1>Services</h1>
@@ -24,6 +35,30 @@
       <tr>
         <td>{{ s.service_name }}</td>
         <td><a href="/delete/{{ s.id }}">delete</a></td>
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{s.id}}">
+          view service
+        </button>
+        <div class="modal fade" id={{s.id}} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>{{ s.service_name }}</p>
+                <p>{{ s.password }}</p>
+                <button type="button" class="btn btn-primary tempshower" onclick="toggleText()">
+                  view decrypted password
+                </button>
+                <h5 style='display: none' id="passshower"><p>{{ s.password }}</p></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        </td>
       </tr>
       {% endfor %}
     </table>
@@ -73,12 +108,6 @@
         <br>
         <br>
         
-        <a class="nav-link btn btn-primary" href="#">delete services</a>
-        <br>
-        <a class="nav-link btn btn-primary" href="#">view services</a>
-        <br>
-        <a class="nav-link btn btn-primary" href="#">view password</a>
-        <br>
         
       </div>
     <!-- Optional JavaScript -->
