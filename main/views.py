@@ -1,4 +1,5 @@
 from doctest import master
+from email import message
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import *
@@ -24,11 +25,13 @@ def service(request,pk):
         service.save()
     if(request.method == 'POST' and request.POST.get('checker')=="update_service"):
         Service.objects.filter(id = request.POST.get('id')).update(service_name=request.POST.get('name'),password = encrypt_password(cur_user.key,request.POST.get('password')).decode())
-    if(request.method == 'POST' and request.POST.get('checker')=="delete_service"):
+    if(request.method == 'POST' and request.POST.get('checker')=="delete_user"):
         query = User.objects.get(id=cur_user.id)
         if(request.POST.get('password')==decrypt_password(cur_user.key,cur_user.master_password)):
             query.delete()
             return redirect('login')
+        # else:
+        #     message("wrong password")
     return render(request, 'main/service.html', context)
 
 def login(request):

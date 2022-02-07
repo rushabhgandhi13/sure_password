@@ -1,13 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{ name }}</h1>
-    <h1>{{ password }}</h1>
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Sure Password</title>
+  </head>
+  <style>
+      * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #4b6cb7;
+}
+
+.container {
+    width: 3500px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+}
+
+/* Start Landing Page */
+
+.landing-page {
+    position: relative;
+    background-color: #FFF;
+}
+
+.landing-page .header-area {
+    display: flex;
+    padding: 25px 0 0;
+    position: relative;
+}
+
+.landing-page .header-area .logo {
+    text-transform: uppercase;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 19px;
+    width: 400px;
+    color: #5d5d5d;
+}
+
+.landing-page .header-area .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.landing-page .header-area .links li {
+    display: inline-block;
+    margin-left: 30px;
+    color: #5d5d5d;
+    cursor: pointer;
+}
+
+.landing-page .header-area .links li:last-child {
+    border: 0;
+    border-radius: 20px;
+    padding: 10px 18px;
+    color: #FFF;
+    background-color: #6c63ff;
+}
+
+.landing-page .info {
+    width: 50%;
+    float: left;
+    margin-top: 130px;
+}
+
+.landing-page .info h1 {
+    font-size: 65px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+    color: #5d5d5d;
+}
+
+.landing-page .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 30px;
+    color: #5d5d5d;
+}
+
+.landing-page .info button {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #4b6cb7;
+}
+
+.landing-page .image {
+    width: 50%;
+    float: right;
+    margin-top: 35px;
+}
+
+.landing-page .image img {
+    max-width: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* End Landing Page */
+  </style>
+  <body>
+    <!-- Start Landing Page -->
+<br><br><br><br><br><br>
+<div class="container" style="padding: 15px;">
+    <div class="landing-page">
+       
+        
+          <div class="info" style="padding-left: 50px;">
+            <h1> {{name}} </h1>
+           <p>Password : {{password}}</p>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="image">
+            <img style="height: 380px; margin-bottom: 43px" src="data:image/jpeg;base64,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">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+  
+  <!-- End Landing Page -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
