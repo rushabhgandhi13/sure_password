@@ -7,4 +7,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('login/',views.login,name='login'),
     path('register/',views.register,name='register'),
+    path('service/<int:pk>/',views.service,name='service'),
+    path('delete/<int:pk>/',views.delete,name='delete'),
     ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
