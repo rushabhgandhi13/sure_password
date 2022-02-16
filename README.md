@@ -70,10 +70,25 @@ Snapshots of the project
 </h2>
   
 ![img](Images/ss_1.png)
-![img](Screenshots/ss2.PNG)  
-![img](Screenshots/ss3.PNG)  
-![img](Screenshots/ss4.PNG)  
-![img](Screenshots/ss5.PNG)  
+![img](Images/ss_2.png)
+![img](Images/ss_3.png)
+![img](Images/ss_4.png)
+![img](Images/ss_5.png)
+![img](Images/ss_6.png)
+![img](Images/ss_7.png)
+![img](Images/ss_8.png)
+![img](Images/ss_9.png)
+![img](Images/ss_10.png)
+![img](Images/ss_11.png)
+![img](Images/ss_12.png)
+![img](Images/ss_13.png)
+![img](Images/ss_14.png)
+![img](Images/ss_15.png)
+![img](Images/ss_16.png)
+![img](Images/ss_17.png)
+![img](Images/ss_18.png)
+![img](Images/ss_19.png)
+
 
 ---
 
