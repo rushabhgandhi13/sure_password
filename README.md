@@ -69,7 +69,7 @@ python manage.py runserver
 Snapshots of the project
 </h2>
   
-![img](Images/ss_1.png)
+![img|600](Images/ss_1.png)
 ![img](Images/ss_2.png)
 ![img](Images/ss_3.png)
 ![img](Images/ss_4.png)
