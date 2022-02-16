@@ -244,7 +244,7 @@
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <span class="sign-in padding-bottom--15">Sign in your account</span>
-              <form id="stripe-login"  method="POST" enctype="multipart/form-data">
+              <form id="stripe-login"  method="POST" enctype="multipart/form-data" autocomplete="off">
                 {% csrf_token %}
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>

@@ -47,7 +47,7 @@
         <ul class="navbar-nav mr-auto">
           
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" autocomplete="off">
           <a style="margin-right: 15px" href="{% url 'login' %}" class="btn btn-outline-danger my-2 my-sm-0"> <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
           <button class="btn btn-outline-danger my-2 my-sm-0" data-toggle="modal" data-target="#deleteaccount" type="button">Delete Account</button>
         </form>
@@ -65,7 +65,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" autocomplete="off">
               {% csrf_token %}
               <div class="underlined">
                   <label>Password: </label>
@@ -123,7 +123,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" autocomplete="off">
                   {% csrf_token %}
                   <div class="underlined">
                     <input style="display: none" type="text" name="id" required placeholder="Password" value="{{s.id}}" />
@@ -164,7 +164,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" autocomplete="off">
                   {% csrf_token %}
                   <div class="underlined">
                       <label>service name: </label>
