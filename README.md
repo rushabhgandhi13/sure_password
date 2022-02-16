@@ -1,7 +1,7 @@
 # Sure Password
 
 <p align="center">
-  <img src="https://github.com/kashish1211/GUPSHUP/blob/master/gupshup/blog/static/blog/LOGO_PNG.png" height="200"/>
+  <img src="https://github.com/rushabhgandhi13/sure_password/blob/master/Images/20. Logo.png" height="200"/>
 </p>
 <br>
 
@@ -53,21 +53,7 @@ pip install -r requirements.txt
 
 python manage.py runserver
 
- 
 ---
-<h2 align="center">
-Snapshots of the project
-</h2>
-  
-![img](Screenshots/ss1.PNG)
-![img](Screenshots/ss2.PNG)  
-![img](Screenshots/ss3.PNG)  
-![img](Screenshots/ss4.PNG)  
-![img](Screenshots/ss5.PNG)  
-
----
-
-<img align="right" width=200px height=200px alt="side_sticker" src="https://github.com/kashish1211/GUPSHUP/blob/master/Screenshots/giphchat.gif" />
 
 ### Features of Sure Password
 * User registration/login. 
@@ -78,4 +64,17 @@ Snapshots of the project
 * Deleting user.
 
 ---
+
+<h2 align="center">
+Snapshots of the project
+</h2>
+  
+![img](Images/1. RegisterPage_Wrong_Credentials.PNG)
+![img](Screenshots/ss2.PNG)  
+![img](Screenshots/ss3.PNG)  
+![img](Screenshots/ss4.PNG)  
+![img](Screenshots/ss5.PNG)  
+
+---
+
 <h3 align="center"><b>Developed with :heart: by <a href="https://github.com/rushabhgandhi13">Rushabh Gandhi</a>, <a href="https://github.com/nixen2802">Nayan Mandliya</a>, <a href="https://github.com/hussein-hub">Hussein Motiwala</a>.</b></h1>
