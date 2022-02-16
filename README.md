@@ -69,7 +69,7 @@ python manage.py runserver
 Snapshots of the project
 </h2>
   
-![img](Images/1. RegisterPage_Wrong_Credentials.PNG)
+![img](Images/ss_1.png)
 ![img](Screenshots/ss2.PNG)  
 ![img](Screenshots/ss3.PNG)  
 ![img](Screenshots/ss4.PNG)  
